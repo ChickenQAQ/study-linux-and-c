@@ -10,7 +10,8 @@ void swap(int *a,int *b)
 }
 int  fast_sort(int *data,int left,int right)
 {
-   if (right <= left) return 0;
+    // 1. 基础情况：如果数组为空或只有一个元素，直接返回
+    if (right <= left) return 0;
     
     int pivot = data[left];      // 选第一个元素作为基准
     int i = left, j = right;       // 注意 j 初始为 right（不是 right-1）
@@ -33,7 +34,12 @@ int  fast_sort(int *data,int left,int right)
     }
     
     // 最后将基准放到正确位置（j 指向的位置）
-   swap(&data[left], &data[j]);  // ✅ 交换基准到正确位置
+    // 2. 递归处理左右子数组
+    fast_sort(data, left, j - 1);  // 递归排序左半部分（注意是 j-1）
+    fast_sort(data, j + 1, right); // 递归排序右半部分（注意是 j+1）
+    
+    // 3. 基准放到正确位置
+    swap(&data[left], &data[j]);  // ✅ 交换基准    到正确位置
     return j;
 }
 
