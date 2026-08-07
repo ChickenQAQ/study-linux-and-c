@@ -3,17 +3,17 @@
 #include <stdbool.h>
 typedef struct 
 {
-    int capacity;//ÈİÁ¿
-    int last;//ÏÂ±ê
-    int * data; //Ë³Ğò±í
+    int capacity;//å®¹é‡
+    int last;//ä¸‹æ ‡
+    int * data; //é¡ºåºè¡¨
 }seq;
 
-//É¾³ıË³Ğò±íÔªËØ
+//åˆ é™¤é¡ºåºè¡¨å…ƒç´ 
 extern bool delete_data (seq *list,int n);
-//±éÀúÕ¹Ê¾Ë³Ğò±íÔªËØ
+//éå†å±•ç¤ºé¡ºåºè¡¨å…ƒç´ 
 extern void showlist(seq * list);
-//²åÈëÔªËØµ½Ë³Ğò±íÍ·
+//æ’å…¥å…ƒç´ åˆ°é¡ºåºè¡¨å¤´
 extern  bool insert(seq* list , int data);
-//ĞÂ½¨Ë³Ğò±í
-extern seq * initlist(int n);//nÎªË³Ğò±í´óĞ¡
+//æ–°å»ºé¡ºåºè¡¨
+extern seq * initlist(int n);//nä¸ºé¡ºåºè¡¨å¤§å°
 #endif
