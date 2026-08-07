@@ -2,4 +2,8 @@
 *.out
 *.o
 *.bin
+*.zip
+*.gz
+*.txt
+
 .vscode/
