@@ -10,7 +10,7 @@
 /*
  * Simple doubly linked list implementation.
  *
- * Some of the internal functions (“__xxx�?) are useful when
+ * Some of the internal functions (“__xxx”) are useful when
  * manipulating whole lists rather than single entries, as
  * sometimes we already know the next/prev entries and we can
  * generate better code by using them directly rather than
@@ -48,8 +48,8 @@ struct list_head
 #define LIST_HEAD(name) \
 	struct list_head name = LIST_HEAD_INIT(name)
 
-// 宏定义�??法�?�定�?能有一条�??�?
-// 如果需要�?�条�?句，那就必须将�?�条�?句放入一个do{}while(0)�?使之成为一条�?�合�?�?
+// 宏定义语法规定只能有一条语句
+// 如果需要多条语句，那就必须将多条语句放入一个do{}while(0)中使之成为一条复合语句
 #define INIT_LIST_HEAD(ptr)  \
 	do                       \
 	{                        \
@@ -74,7 +74,7 @@ static inline void __list_add(struct list_head *new,
 }
 
 /**
- * list_add �? add a new entry
+ * list_add “ add a new entry
  * @new: new entry to be added
  * @head: list head to add it after
  *
@@ -87,7 +87,7 @@ static inline void list_add(struct list_head *new, struct list_head *head)
 }
 
 /**
- * list_add_tail �? add a new entry
+ * list_add_tail “ add a new entry
  * @new: new entry to be added
  * @head: list head to add it before
  *
@@ -113,7 +113,7 @@ static inline void __list_del(struct list_head *prev, struct list_head *next)
 }
 
 /**
- * list_del �? deletes entry from list.
+ * list_del “ deletes entry from list.
  * @entry: the element to delete from the list.
  * Note: list_empty on entry does not return true after this, the entry is in an undefined state.
  */
@@ -125,7 +125,7 @@ static inline void list_del(struct list_head *entry)
 }
 
 /**
- * list_del_init �? deletes entry from list and reinitialize it.
+ * list_del_init “ deletes entry from list and reinitialize it.
  * @entry: the element to delete from the list.
  */
 static inline void list_del_init(struct list_head *entry)
@@ -135,7 +135,7 @@ static inline void list_del_init(struct list_head *entry)
 }
 
 /**
- * list_move �? delete from one list and add as another’s head
+ * list_move “ delete from one list and add as another’s head
  * @list: the entry to move
  * @head: the head that will precede our entry
  */
@@ -147,7 +147,7 @@ static inline void list_move(struct list_head *list,
 }
 
 /**
- * list_move_tail �? delete from one list and add as another’s tail
+ * list_move_tail “ delete from one list and add as another’s tail
  * @list: the entry to move
  * @head: the head that will follow our entry
  */
@@ -159,7 +159,7 @@ static inline void list_move_tail(struct list_head *list,
 }
 
 /**
- * list_empty �? tests whether a list is empty
+ * list_empty “ tests whether a list is empty
  * @head: the list to test.
  */
 static inline int list_empty(struct list_head *head)
@@ -182,7 +182,7 @@ static inline void __list_splice(struct list_head *list,
 }
 
 /**
- * list_splice �? join two lists
+ * list_splice “ join two lists
  * @list: the new list to add.
  * @head: the place to add it in the first list.
  */
@@ -193,7 +193,7 @@ static inline void list_splice(struct list_head *list, struct list_head *head)
 }
 
 /**
- * list_splice_init �? join two lists and reinitialise the emptied list.
+ * list_splice_init “ join two lists and reinitialise the emptied list.
  * @list: the new list to add.
  * @head: the place to add it in the first list.
  *
@@ -210,7 +210,7 @@ static inline void list_splice_init(struct list_head *list,
 }
 
 /**
- * list_entry �? get the struct for this entry
+ * list_entry “ get the struct for this entry
  * @ptr:    the &struct list_head pointer.
  * @type:    the type of the struct this is embedded in.
  * @member:    the name of the list_struct within the struct.
@@ -257,7 +257,7 @@ static inline void list_splice_init(struct list_head *list,
 		 pos = list_entry(pos->member.next, typeof(*pos), member))
 
 /**
-* list_for_each_entry_safe �? iterate over list of given type safe against removal of list entry
+* list_for_each_entry_safe “ iterate over list of given type safe against removal of list entry
 * @pos:    the type * to use as a loop counter.
 * @n:        another type * to use as temporary storage
 * @head:    the head for your list.

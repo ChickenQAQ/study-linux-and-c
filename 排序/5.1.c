@@ -10,7 +10,7 @@ int main ()
     FILE *fp = fopen("record.txt","r");
     if(fp == NULL)
     {
-        printf("【错误】打开文件失败！\n");
+        printf("Failed to open file\n");
         return 1;
     }
     struct people p[100];
