@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     {
         fputc(message[i%10], fp);
     } 
-    pause();//暂停   
+    pause();//暂停，等待信号
     //fputs("appletree",fp);
     //fflush(fp);//强制刷新
     //return 0;
