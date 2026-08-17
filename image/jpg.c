@@ -41,10 +41,10 @@ char *jpg2rgb(const char *jpgdata, size_t jpgsize, int *jpg_w, int *jpg_h)
     cinfo.out_color_space = JCS_RGB;
     // 5，开始解码
     jpeg_start_decompress(&cinfo);
-    *jpg_w = cinfo.output_width;
-    *jpg_h = cinfo.output_height;
 
     // 6，获取图片的尺寸信息
+    *jpg_w = cinfo.output_width;
+    *jpg_h = cinfo.output_height;
     printf("宽：  %d\n", cinfo.output_width);
     printf("高：  %d\n", cinfo.output_height);
     printf("色深：%d\n", cinfo.output_components);
